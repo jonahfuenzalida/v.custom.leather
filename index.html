@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artesanía en Cuero</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    header {
+      position: sticky;
+      top: 0;
+      background: #0c0c0c;
+      border-bottom: 1px solid #222;
+      z-index: 10;
+    }
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+    nav .logo {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+      font-size: .9rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+    }
+    .hero-content {
+      position: relative;
+      max-width: 600px;
+      padding: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: .5rem;
+    }
+    .hero p {
+      opacity: .85;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
+    section h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+
+    /* GRID PRODUCTOS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: #181818;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card p {
+      padding: .8rem;
+      font-size: .85rem;
+      opacity: .85;
+    }
+
+    /* SERVICIOS */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .service {
+      background: #181818;
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+    .service h3 {
+      margin-top: 0;
+    }
+
+    /* FORM */
+    form {
+      max-width: 400px;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: .8rem;
+      border-radius: 8px;
+      border: none;
+      font-size: .9rem;
+    }
+    input, textarea { background: #0f0f0f; color: #fff; }
+    button { background: #8b5e3c; color: #fff; cursor: pointer; }
+
+    /* FOOTER */
+    footer {
+      background: #0c0c0c;
+      border-top: 1px solid #222;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: .8rem;
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Cuero Artesanal</div>
+    <ul>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Artesanía en cuero hecha a mano</h1>
+    <p>Piezas únicas, duraderas y creadas con dedicación.</p>
+  </div>
+</section>
+
+<section id="productos">
+  <h2>Productos</h2>
+  <div class="grid">
+    <div class="card"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"><p>Billetera de cuero</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"><p>Cinturón artesanal</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"><p>Bolso de cuero</p></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba"><p>Funda personalizada</p></div>
+  </div>
+</section>
+
+<section id="servicios">
+  <h2>Servicios</h2>
+  <div class="services">
+    <div class="service"><h3>Pedidos personalizados</h3><p>Diseños a medida según tu idea.</p></div>
+    <div class="service"><h3>Reparaciones</h3><p>Restauración y mantención de cuero.</p></div>
+    <div class="service"><h3>Grabado</h3><p>Iniciales y detalles únicos.</p></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>Déjame tu correo y cuéntame qué necesitas.</p>
+  <form action="https://formspree.io/f/xxxxxxx" method="POST">
+    <input type="email" name="email" placeholder="Tu correo" required />
+    <textarea name="mensaje" rows="4" placeholder="Tu mensaje"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 · Artesanía en Cuero · Hecho a mano
+</footer>
+
+</body>
+</html>
