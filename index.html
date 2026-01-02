@@ -1,204 +1,253 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <title>Vicencio Custom Leather</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
-    }
-    a { color: inherit; text-decoration: none; }
 
-    /* NAV */
-    header {
-      position: sticky;
-      top: 0;
-      background: #0c0c0c;
-      border-bottom: 1px solid #222;
-      z-index: 10;
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #eaeaea;
     }
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
+    .navbar {
+      background-color: #0b0b0b;
     }
-    nav .logo {
-      font-weight: bold;
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+      url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover;
+      min-height: 75vh;
+    }
+    .hero h1 {
       letter-spacing: 1px;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      padding: 0;
-      margin: 0;
-      font-size: .9rem;
+    .section-title {
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
     }
-
-    /* HERO */
-    .hero {
-      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover;
-      height: 70vh;
+    .product-card img {
+      height: 260px;
+      object-fit: cover;
+    }
+    .product-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .product-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.65);
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      position: relative;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,.6);
-    }
-    .hero-content {
-      position: relative;
-      max-width: 600px;
-      padding: 1rem;
-    }
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: .5rem;
-    }
-    .hero p {
-      opacity: .85;
-    }
-
-    /* SECTIONS */
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 1rem;
-    }
-    section h2 {
-      margin-bottom: 1.5rem;
-      font-size: 1.6rem;
-    }
-
-    /* GRID PRODUCTOS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: #181818;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-    .card p {
-      padding: .8rem;
-      font-size: .85rem;
-      opacity: .85;
-    }
-
-    /* SERVICIOS */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-    .service {
-      background: #181818;
-      padding: 1.5rem;
-      border-radius: 12px;
-    }
-    .service h3 {
-      margin-top: 0;
-    }
-
-    /* FORM */
-    form {
-      max-width: 400px;
-    }
-    input, textarea, button {
-      width: 100%;
-      margin-top: 1rem;
-      padding: .8rem;
-      border-radius: 8px;
-      border: none;
+      opacity: 0;
+      transition: opacity .3s ease;
+      letter-spacing: 1px;
       font-size: .9rem;
     }
-    input, textarea { background: #0f0f0f; color: #fff; }
-    button { background: #8b5e3c; color: #fff; cursor: pointer; }
-
-    /* FOOTER */
-    footer {
-      background: #0c0c0c;
-      border-top: 1px solid #222;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: .8rem;
-      opacity: .7;
+    .product-card:hover .product-overlay {
+      opacity: 1;
     }
+    .bg-dark-soft {
+      background-color: #161616;
+    }
+    footer {
+      background-color: #0b0b0b;
+      font-size: .85rem;
+    }
+    h1, h2, h3, h4, h5, .brand, .product-overlay {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+}
   </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="logo">Cuero Artesanal</div>
-    <ul>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand brand d-flex align-items-center gap-2 fw-semibold" href="#">
+        <svg width="22" height="22" viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            style="opacity:.75">
+            <polygon points="50,5 95,82 5,82"
+                    fill="none" stroke="white" stroke-width="6"/>
+            <polygon points="50,18 83,75 17,75"
+                    fill="none" stroke="white" stroke-width="6"/>
+            <polygon points="50,32 70,70 30,70"
+                    fill="none" stroke="white" stroke-width="6"/>
+        </svg>
+        Vicencio Custom Leather
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Artesanía en cuero hecha a mano</h1>
-    <p>Piezas únicas, duraderas y creadas con dedicación.</p>
+<!-- HERO -->
+<section class="hero d-flex align-items-center text-center">
+  <div class="container">
+    <h1>MAKE IT. DON’T TALK ABOUT IT.</h1>
+    <p style="opacity:.75">HANDCRAFTED LEATHER GOODS</p>
   </div>
 </section>
 
-<section id="productos">
-  <h2>Productos</h2>
-  <div class="grid">
-    <div class="card"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"><p>Billetera de cuero</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"><p>Cinturón artesanal</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"><p>Bolso de cuero</p></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba"><p>Funda personalizada</p></div>
+<!-- PRODUCTOS -->
+<section id="productos" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Productos</h2>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card bg-dark-soft product-card border-0">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="card-img-top" alt="">
+          <div class="product-overlay">Bolso · Mochila · Funda · Accesorios</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card bg-dark-soft product-card border-0">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="card-img-top" alt="">
+          <div class="product-overlay">Bolso · Mochila · Funda · Accesorios</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card bg-dark-soft product-card border-0">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="card-img-top" alt="">
+          <div class="product-overlay">Bolso · Mochila · Funda · Accesorios</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card bg-dark-soft product-card border-0">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="card-img-top" alt="">
+          <div class="product-overlay">Bolso · Mochila · Funda · Accesorios</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="servicios">
-  <h2>Servicios</h2>
-  <div class="services">
-    <div class="service"><h3>Pedidos personalizados</h3><p>Diseños a medida según tu idea.</p></div>
-    <div class="service"><h3>Reparaciones</h3><p>Restauración y mantención de cuero.</p></div>
-    <div class="service"><h3>Grabado</h3><p>Iniciales y detalles únicos.</p></div>
+<!-- SERVICIOS -->
+<section id="servicios" class="py-5 bg-dark-soft">
+  <div class="container">
+    <h2 class="section-title">Servicios</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-4 h-100 border border-secondary border-opacity-25">
+          <h5>Pedidos personalizados</h5>
+          <p class="opacity-75">Diseños a medida según tu idea.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 h-100 border border-secondary border-opacity-25">
+          <h5>Reparaciones</h5>
+          <p class="opacity-75">Restauración y mantención de cuero.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 h-100 border border-secondary border-opacity-25">
+          <h5>Repujado</h5>
+          <p class="opacity-75">Trabajo artesanal en relieve sobre cuero.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>Cuéntanos qué necesitas.</p>
-  <form action="https://formspree.io/f/mwvpklyd" method="POST">
-    <input type="email" name="email" placeholder="Tu correo" required />
-    <textarea name="mensaje" rows="4" placeholder="Tu mensaje"></textarea>
-    <button type="submit">Enviar</button>
-  </form>
+<!-- CONTACTO -->
+<section id="contacto" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Contacto</h2>
+    <p class="opacity-75">Déjame tu correo y cuéntame qué necesitas.</p>
+    <form action="https://formspree.io/f/xxxxxxx" method="POST" class="col-md-6 p-0">
+      <input type="email" name="email" class="form-control mb-3 bg-dark text-light border-secondary" placeholder="Tu correo" required>
+      <textarea name="mensaje" class="form-control mb-3 bg-dark text-light border-secondary" rows="4" placeholder="Tu mensaje"></textarea>
+      <button class="btn btn-outline-light">Enviar</button>
+    </form>
+  </div>
 </section>
 
-<footer>
-  © 2025 · Artesanía en Cuero · Hecho a mano
+<!-- FOOTER -->
+<footer class="bg-dark-soft pt-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- COLUMNA 1: LOGO + SLOGAN -->
+      <div class="col-md-4">
+        <div class="d-flex align-items-center gap-2 mb-3 brand">
+          <svg width="26" height="26" viewBox="0 0 100 100"
+               xmlns="http://www.w3.org/2000/svg"
+               style="opacity:.75">
+            <polygon points="50,5 95,82 5,82"
+                     fill="none" stroke="white" stroke-width="6"/>
+            <polygon points="50,18 83,75 17,75"
+                     fill="none" stroke="white" stroke-width="6"/>
+            <polygon points="50,32 70,70 30,70"
+                     fill="none" stroke="white" stroke-width="6"/>
+          </svg>
+          <span>Vicencio Custom Leather</span>
+        </div>
+        <p class="opacity-75 small">
+          Make it. Don’t talk about it.
+        </p>
+      </div>
+
+      <!-- COLUMNA 2: CONTACTO -->
+      <div class="col-md-4">
+        <h6 class="mb-3">Contacto</h6>
+        <p class="small opacity-75 mb-2">
+          <i class="bi bi-telephone me-2"></i> +56 9 6000 8080
+        </p>
+        <p class="small opacity-75 mb-2">
+          <i class="bi bi-telephone me-2"></i> +56 9 6000 8081
+        </p>
+        <p class="small opacity-75 mb-2">
+          <i class="bi bi-envelope me-2"></i> v.custom.leather@gmail.com
+        </p>
+        <p class="small opacity-75">
+          <i class="bi bi-globe me-2"></i>
+          <a href="#" class="text-light text-decoration-none">Sitio principal</a>
+        </p>
+      </div>
+
+      <!-- COLUMNA 3: MAPA -->
+      <div class="col-md-4">
+        <h6 class="mb-3">Ubicación</h6>
+        <iframe
+          src="https://www.google.com/maps?q=Chile&output=embed"
+          width="100%"
+          height="160"
+          style="border:0; filter: grayscale(100%) contrast(90%);"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+
+    <!-- FIRMA -->
+    <div class="text-center py-4 mt-4 border-top border-secondary border-opacity-25 small opacity-75">
+      © 2025 · Vicencio Custom Leather · Hecho a mano
+    </div>
+  </div>
 </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
-
