@@ -74,19 +74,39 @@
       font-family: 'Oswald', sans-serif;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-    .brand-title {
-      font-size: 1.1rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+        /* FOOTER BASE */
+    footer {
+      font-family: 'Oswald', sans-serif;
     }
-    .footer-slogan {
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      opacity: .7;
-    }
+    
+    /* TITULOS FOOTER */
     .footer-title {
       font-size: 0.9rem;
       letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    /* TEXTO NORMAL FOOTER */
+    .footer-text {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      opacity: .75;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* SLOGAN */
+    .footer-slogan {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      opacity: .7;
+      max-width: 320px;
+    }
+    
+    /* MARCA */
+    .brand-title {
+      font-size: 1rem;
+      letter-spacing: 0.18em;
     }
   </style>
 </head>
@@ -117,8 +137,8 @@
 <!-- HERO -->
 <section class="hero d-flex align-items-center text-center">
   <div class="container">
-    <h1>DO THE WORK. LEAVE YOUR MARK.</h1>
-    <p style="opacity:.75">CHILEAN HANDCRAFTED LEATHER GOODS</p>
+    <h1>Haz el trabajo. Y Deja tu marca.</h1>
+    <p style="opacity:.75">Articulos de cuero 100% hechos a mano. Producto Chileno.</p>
   </div>
 </section>
 
@@ -200,41 +220,38 @@
   <div class="container">
     <div class="row g-4">
 
-      <!-- COLUMNA 1: LOGO + SLOGAN -->
+      <!-- COLUMNA 1 -->
       <div class="col-md-6">
         <div class="d-flex align-items-center gap-2 mb-3 brand">
           <img src="imagenes/Valknut1.png"
-           alt="Valknut"
-           style="width:22px;height:22px;opacity:.75;">
+               alt="Valknut"
+               style="width:22px;height:22px;opacity:.75;">
           <span class="brand-title">VICENCIO CUSTOM LEATHER</span>
         </div>
         <p class="footer-slogan">
-          Make it. Don’t talk about it.
+          Haz el trabajo. Deja tu marca. Somos un taller de artezania en cuero con residencia en Santiago de Chile. Mas de 30 años de experiencia entregando piezas de artezania en cuero personalizadas. Nuestra tienda es 100% Online, Contactanos!. 
         </p>
       </div>
 
-      <!-- COLUMNA 2: CONTACTO -->
+      <!-- COLUMNA 2 -->
       <div class="col-md-6">
-        <h5 class="footer-title mb-3">CONTACTO</h5>
-        <p class="small opacity-75 mb-2">
+        <h5 class="footer-title">Contacto</h5>
+
+        <p class="footer-text">
           <i class="bi bi-telephone me-2"></i> +56 9 6000 8080
         </p>
-        <p class="small opacity-75 mb-2">
+        <p class="footer-text">
           <i class="bi bi-telephone me-2"></i> +56 9 6000 8081
         </p>
-        <p class="small opacity-75 mb-2">
+        <p class="footer-text">
           <i class="bi bi-envelope me-2"></i> v.custom.leather@gmail.com
         </p>
-        <p class="small opacity-75">
+        <p class="footer-text">
           <i class="bi bi-globe me-2"></i>
           <a href="#" class="text-light text-decoration-none">Sitio principal</a>
         </p>
       </div>
-    </div>
 
-    <!-- FIRMA -->
-    <div class="text-center py-4 mt-4 border-top border-secondary border-opacity-25 small opacity-75">
-      © 2024 · Vicencio Custom Leather · Chilean HandCrafted Leather Goods
     </div>
   </div>
 </footer>
