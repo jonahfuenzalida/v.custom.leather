@@ -134,23 +134,16 @@
       box-shadow: 0 10px 22px rgba(0,0,0,.45);
     }
     /* =========================
-   HERO MOBILE FIX
-  ========================= */
-  @media (max-width: 768px) {
-    .hero {
-      min-height: 55vh;      /* altura fija y elegante */
-      background-position: center top; /* prioriza parte superior */
-    }
-  
-    .hero h1 {
-      font-size: 1.6rem;
-      letter-spacing: 0.12em;
-    }
-  
-    .hero p {
-      font-size: 0.9rem;
-    }
-  }
+   HERO MOBILE FIX DEFINITIVO
+========================= */
+    @media (max-width: 768px) {
+      .hero {
+        height: 420px;          /* ALTURA FIJA REAL */
+        min-height: unset;     /* anula el 75vh */
+        background-size: cover;
+        background-position: center center;
+        animation: none;       /* opcional: evita recorte por zoom */
+      }
   </style>
 </head>
 
